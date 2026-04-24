@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة الامتياز | Imtiyaz Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+
+    <div id="toast-container"></div>
+
+    <button onclick="toggleTheme()" class="theme-toggle">
+        <i id="theme-icon" class="fas fa-sun"></i>
+    </button>
+
+    <section id="landing-page" class="hero-section">
+        <div class="overlay"></div>
+        <div class="content-wrapper">
+            <div class="brand-box">
+                <i class="fas fa-book-reader main-icon"></i>
+                <h1 class="main-title">مكتبة الامتياز</h1>
+                <p class="slogan">وجهتكم الأولى للتميز والإبداع</p>
+            </div>
+            
+            <div class="glass-card">
+                <div id="login-box">
+                    <h3>تسجيل الدخول</h3>
+                    <input type="email" id="email-log" placeholder="البريد الإلكتروني" class="input-style">
+                    <input type="password" id="pass-log" placeholder="كلمة السر" class="input-style">
+                    <button onclick="handleLogin()" class="glow-btn">دخول</button>
+                    <p class="switch-p">جديد هنا؟ <span onclick="toggleAuth('reg')">أنشئ حسابك</span></p>
+                </div>
+                <div id="reg-box" style="display: none;">
+                    <h3>حساب جديد</h3>
+                    <input type="email" id="email-reg" placeholder="البريد الإلكتروني" class="input-style">
+                    <input type="password" id="pass-reg" placeholder="كلمة السر (6+ رموز)" class="input-style">
+                    <button onclick="handleRegister()" class="glow-btn">تسجيل</button>
+                    <p class="switch-p">عندك حساب؟ <span onclick="toggleAuth('log')">ادخل هنا</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard" style="display: none;">
+        <nav class="top-nav">
+            <div class="brand-small">
+                <span class="logo-text">الامتياز</span>
+            </div>
+            <div class="nav-links">
+                <button onclick="switchTab('market')" class="tab-btn active">المتجر</button>
+                <button onclick="switchTab('pdf')" class="tab-btn">المكتبة</button>
+                <button onclick="switchTab('map')" class="tab-btn">موقعنا</button>
+                <button onclick="handleLogout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </nav>
+
+        <div id="market-section" class="tab-content">
+            <div class="section-header">
+                <h2>المتجر الذكي 🛒</h2>
+                <button id="wa-btn" onclick="sendOrder()" class="wa-btn disabled">
+                    إرسال للواتساب (<span id="cart-count">0</span>)
+                </button>
+            </div>
+            <div class="grid" id="market-grid"></div>
+        </div>
+
+        <div id="pdf-section" class="tab-content" style="display: none;">
+            <h2>المكتبة الرقمية 📚</h2>
+            <div class="grid" id="pdf-grid"></div>
+        </div>
+
+        <div id="map-section" class="tab-content" style="display: none;">
+            <h2>موقعنا في العامرة 📍</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d102.1!2d10.9!3d35.1!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDA2JzAwLjAiTiAxMMKwNTQnMDAuMCJF!5e0!3m2!1sar!2stn!4v1713950000000!5m2!1sar!2stn" width="100%" height="400" style="border:0; border-radius:15px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
