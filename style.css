@@ -1,0 +1,122 @@
+:root {
+    --primary-bg: #000b1a;
+    --accent-blue: #00d2ff;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --text-color: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: radial-gradient(circle at center, #001d3d, #000814);
+}
+
+.glass-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.logo-title {
+    font-size: clamp(2rem, 8vw, 3.5rem); /* حجم خط يتغير حسب الشاشة */
+    font-weight: 900;
+    background: linear-gradient(to right, #fff, var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.typing-box {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    color: var(--accent-blue);
+    height: 50px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    background: var(--accent-blue);
+    color: white;
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-label {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* هذا السر متاع التلفون */
+    gap: 20px;
+}
+
+.feature-card {
+    background: var(--glass-bg);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    border-color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--accent-blue);
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* Cursor Animation */
+.cursor { animation: blink 0.7s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
