@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة الامتياز - قريباً</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* خلفية متحركة بألوان احترافية */
+            background: linear-gradient(-45deg, #004e92, #000428, #1e3c72, #2a5298);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            font-family: 'Cairo', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px); /* تأثير الزجاج الضبابي */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        p { font-size: 1.5rem; opacity: 0.9; }
+
+        .btn-whatsapp {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+
+        /* حركة خفيفة للنص */
+        .coming-soon {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>مكتبة الامتياز</h1>
+        <p class="coming-soon">قريباً.. نفتح لكم أبواب التفوق</p>
+        <p style="font-size: 1rem;">نحن نعمل حالياً على تجهيز أفضل المحتويات التعليمية والخدمات.</p>
+        
+        <a href="https://wa.me/21652206325" class="btn-whatsapp">
+            اطلب "باك النجاح" عبر واتساب
+        </a>
+    </div>
+
+</body>
+</html>
