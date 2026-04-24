@@ -1,1 +1,26 @@
-const phrases = [  'Your partner in academic excellence',  'All school supplies in one place',  'Coming soon!',];let i = 0;let loop = () => {  let phrase = phrases[i];  let charIndex = 0;  let typingEffect = setInterval(() => {    document.getElementById('typing').textContent += phrase.charAt(charIndex);    charIndex++;    if (charIndex === phrase.length) {      clearInterval(typingEffect);      setTimeout(() => {        let deletingEffect = setInterval(() => {          document.getElementById('typing').textContent = document.getElementById('typing').textContent.slice(0, -1);          if (document.getElementById('typing').textContent.length === 0) {            clearInterval(deletingEffect);            i = (i + 1) % phrases.length;            setTimeout(loop, 1000); // Wait before starting next phrase          }        }, 100);      }, 2000); // Wait before deleting  }, 100); // Typing speed  };loop();
+function typingAnimation(texts, elementId, delay = 100) {
+    let index = 0;
+    let textIndex = 0;
+    const element = document.getElementById(elementId);
+
+    function type() {
+        if (index < texts[textIndex].length) {
+            element.textContent += texts[textIndex].charAt(index);
+            index++;
+            setTimeout(type, delay);
+        } else {
+            index = 0;
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(() => {
+                element.textContent = '';
+                type();
+            }, 1000); // Delay before starting the next phrase
+        }
+    }
+
+    type();
+}
+
+// Initialize the typing animation
+const phrases = ["مرحباً بك في مكتبة الامتياز", "اكتشف آلاف الكتب والمراجع", "قريباً في حلة جديدة"];
+typingAnimation(phrases, 'typing-element');
