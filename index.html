@@ -3,158 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة الامتياز - قريباً</title>
+    <title>مكتبة الامتياز - التميز عنواننا</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #004e92;
-            --secondary: #000428;
-            --accent: #00d2ff;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Cairo', sans-serif;
-            background: linear-gradient(-45deg, #000428, #004e92, #1e3c72, #2a5298);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            overflow: hidden;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .container {
-            text-align: center;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            padding: 50px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 25px 45px rgba(0,0,0,0.2);
-            transform: translateY(0px);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #fff, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        .typing-text {
-            font-size: 1.5rem;
-            height: 40px;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .loader {
-            width: 100px;
-            height: 5px;
-            background: rgba(255,255,255,0.1);
-            margin: 30px auto;
-            position: relative;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .loader::after {
-            content: '';
-            width: 50%;
-            height: 100%;
-            background: var(--accent);
-            position: absolute;
-            left: 0;
-            animation: loading 2s linear infinite;
-        }
-
-        @keyframes loading {
-            0% { left: -50%; }
-            100% { left: 100%; }
-        }
-
-        .btn-contact {
-            background: white;
-            color: var(--primary);
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            display: inline-block;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .btn-contact:hover {
-            transform: scale(1.1) rotate(2deg);
-            background: var(--accent);
-            color: white;
-        }
-
-        /* جزيئات تتحرك في الخلفية */
-        #particles {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-        }
-    </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>مكتبة الامتياز</h1>
-    <div class="typing-text" id="typewriter"></div>
-    
-    <div class="loader"></div>
-    
-    <p>موقعنا الجديد قيد الإنشاء.. انتظرونا قريباً بحلّة عالمية!</p>
-    
-    <a href="https://wa.me/21652206325" class="btn-contact">تواصل معنا عبر واتساب</a>
-</div>
+    <div class="background-animation"></div>
 
-<script>
-    // كود الكتيبة اللي تتكتب وتتمسح وحدها (Typing Effect)
-    const text = "كل ما يحتاجه التلميذ.. جودة، إتقان، وامتياز.";
-    let i = 0;
-    const speed = 100;
+    <div class="main-card">
+        <div class="logo-area">
+            <h1 class="glow-text">مكتبة الامتياز</h1>
+            <div class="badge">قريباً في حلة جديدة</div>
+        </div>
 
-    function typeWriter() {
-        if (i < text.length) {
-            document.getElementById("typewriter").innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        } else {
-            setTimeout(() => {
-                document.getElementById("typewriter").innerHTML = "";
-                i = 0;
-                typeWriter();
-            }, 3000); // يستنى 3 ثواني ويعاود
-        }
-    }
+        <div class="content">
+            <p class="typing-container">
+                <span id="ai-text"></span><span class="cursor">|</span>
+            </p>
+        </div>
 
-    window.onload = typeWriter;
-</script>
+        <div class="actions">
+            <a href="https://wa.me/21652206325" class="btn-shine">تواصل معنا الآن</a>
+        </div>
+    </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
